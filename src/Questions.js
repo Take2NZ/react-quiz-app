@@ -13,8 +13,8 @@ const questions = [
   {
     question: 'What is JavaScript?',
     answers: [
-      "It's a framework",
       "It's a language",
+      "It's a framework",
       "It's the same as Java",
     ]
   }
