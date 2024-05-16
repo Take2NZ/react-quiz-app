@@ -5,9 +5,9 @@ const questions = [
   {
     question: 'What is React?',
     answers: [
-      "It's a framework",
+      "It's a library",
       "It's a language",
-      "It's like Facebook"
+      "It's a framework"
     ]
   },
   {
