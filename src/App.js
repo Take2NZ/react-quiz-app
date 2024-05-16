@@ -1,7 +1,7 @@
-import logo from './logo.svg';
 import './output.css';
 import  Questions  from './Questions.js'
 import { useState } from 'react';
+import AnswerPicker from './AnswerPicker.js';
 
 function App() {
   const randomIndex = (array) => (
@@ -23,14 +23,13 @@ function App() {
      </div>
      <div>
       <h2>{Questions[questionIndex].question}</h2>
-      <ol className="list list-decimal">
-       {Questions[questionIndex].answers.map((answer, i) => (
-       <li key={i} onClick={() => setAnswerIndex(i)}>{answer}</li>
-        ))}
-      </ol>
+        <AnswerPicker 
+          answers={Questions[questionIndex].answers}
+          setAnswerIndex={setAnswerIndex}
+        />
       </div>
       <button onClick={handleQuestionBtnClick} className="bg-gray-400 rounded-lg p-2">Next Question</button>
-    <h1>{(answerIndex == 0) ? <p>CorrectAnswer!</p> : (answerIndex !== undefined && <p>Wrong Answer</p>)}</h1>
+    <h1>{(answerIndex === 0) ? <p>CorrectAnswer!</p> : (answerIndex !== undefined && <p>Wrong Answer</p>)}</h1>
     </div>
   );
 }
